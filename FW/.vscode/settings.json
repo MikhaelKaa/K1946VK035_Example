@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "k1921vk035.h": "c",
+        "retarget.h": "c",
+        "k1946vk035.h": "c",
+        "stdio.h": "c",
+        "memory_man.h": "c",
+        "port.h": "c",
+        "ucmd.h": "c"
+    }
+}

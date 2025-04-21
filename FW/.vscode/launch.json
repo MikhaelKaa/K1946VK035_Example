@@ -1,0 +1,23 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Cortex Debug by cmsis-dap",
+			"cwd": "${workspaceRoot}",
+			"executable": "./build/firmware.elf",
+			"svdFile": "./dbg/K1921VK035.svd",
+			"request": "launch",
+			"type": "cortex-debug",
+			"servertype": "openocd",
+			"serverpath": "C:/work_old1/niiet_riscv_sdk/xpack-openocd-k1921vk-0.12.0-k1921vk-win32-x64/bin/openocd.exe",  // Windows пример
+			"gdbPath": "arm-none-eabi-gdb",
+			"interface": "swd",
+			"runToEntryPoint": "main",
+			"showDevDebugOutput":"raw",
+			"configFiles": [
+				"./dbg/cmsis-dap.cfg",
+				"./dbg/k1921vk035.cfg"
+			]
+		}
+	]
+}
