@@ -46,7 +46,7 @@ else
     apt-get -y install binutils 
     apt-get -y install build-essential
     
-
+    
     # Настройка локали
     #locale-gen "en_US.UTF-8"
 fi
@@ -67,8 +67,12 @@ else
 fi
 
 echo  "-----------------------------------------------------------------------"
-echo " BLOCK-2: Wrapper generation for Yocto"
+echo " BLOCK-2: Wrapper generation"
 echo "-----------------------------------------------------------------------"
+
+chmod +x scripts/setup.sh
+chmod +x scripts/build.sh
+chmod +x scripts/clean.sh
 
 cat << EOT > ./Makefile
 
@@ -106,7 +110,7 @@ define HEADER
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣾⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 
-[zx-uvc/wrapper]
+[K1946VK035/wrapper]
 usage:
   make init
   make build
@@ -118,6 +122,7 @@ export MAKEFLAGS=--no-print-directory
 
 init:
 	(exec ./scripts/setup.sh)
+
 build:
 	(exec ./scripts/build.sh)
 
