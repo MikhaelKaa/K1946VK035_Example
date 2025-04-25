@@ -5,4 +5,15 @@
 
 "under constructions"
 
+# Сборка из изходного кода для пользователей Ubuntu (Linux)
+
+Склонируйте репозитарий:
+
+git clone https://github.com/MikhaelKaa/K1946VK035_Example.git
+
+Выполните в директории репозитария:
+
+sudo ./configure
+
+make build
 
