@@ -3,6 +3,7 @@
 // Михаил Каа
 
 #include <stdio.h>
+#include <string.h>
 
 #include "K1921VK035.h"
  
