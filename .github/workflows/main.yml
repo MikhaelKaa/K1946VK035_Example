@@ -1,0 +1,32 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  BUILD_TYPE: Debug
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+
+    - name: Configure
+      run: sudo ./configure
+
+    - name: Build
+      run: make build
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Build
+        path: ${{github.workspace}}/FW/build/firmware.bin
