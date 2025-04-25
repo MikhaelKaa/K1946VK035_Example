@@ -20,7 +20,7 @@ jobs:
         submodules: 'recursive'
 
     - name: Configure
-      run: ls -la; sudo ./configure
+      run: ls -la; sudo sh ./configure
 
     - name: Build
       run: make build
