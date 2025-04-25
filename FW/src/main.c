@@ -76,7 +76,7 @@ int ucmd_adc(int argc, char *argv[])
         ucmd_set_sigint(adc_log_sigint);
       }
       // adc log off
-      if((strcmp(&argv[1][0], "log") == 0) &\
+      if((strcmp(&argv[1][0], "log") == 0) &&\
          (strcmp(&argv[2][0], "off")) == 0) {
         printf("adc log off\r\n");
         adc_show_in_console = 0;
@@ -188,8 +188,8 @@ void ADC_SEQ0_IRQHandler()
     if(adc_show_in_console) {
       clrscr();
       gotoxy(0, 0);
-      printf("0x%03x, 0x%03x, 0x%03x, 0x%03x\r\n", ch_res[0], ch_res[1], ch_res[2], ch_res[3]);
-      printf("%04d, %04d, %04d, %04d\r\n", ch_res[0], ch_res[1], ch_res[2], ch_res[3]);
+      printf("0x%03lx, 0x%03lx, 0x%03lx, 0x%03lx\r\n", ch_res[0], ch_res[1], ch_res[2], ch_res[3]);
+      printf("%04ld, %04ld, %04ld, %04ld\r\n", ch_res[0], ch_res[1], ch_res[2], ch_res[3]);
       printf("%.03f, %.03f, %.03f, %.03f\r\n",
              (ch_res[0] * avdd) / 4096,
              (ch_res[1] * avdd) / 4096,
