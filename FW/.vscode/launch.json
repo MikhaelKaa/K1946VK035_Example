@@ -9,8 +9,9 @@
 			"request": "launch",
 			"type": "cortex-debug",
 			"servertype": "openocd",
-			"serverpath": "C:/work_old1/niiet_riscv_sdk/xpack-openocd-k1921vk-0.12.0-k1921vk-win32-x64/bin/openocd.exe",  // Windows пример
-			"gdbPath": "arm-none-eabi-gdb",
+			// "serverpath": "C:/work_old1/niiet_riscv_sdk/xpack-openocd-k1921vk-0.12.0-k1921vk-win32-x64/bin/openocd.exe",  // Windows пример
+			// "gdbPath": "arm-none-eabi-gdb",
+			"gdbPath": "gdb-multiarch", // !!! comment this on windows !!!
 			"interface": "swd",
 			"runToEntryPoint": "main",
 			"showDevDebugOutput":"raw",

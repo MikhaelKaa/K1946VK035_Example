@@ -82,7 +82,8 @@ C_DEFS =  \
 -DK1946VK035 \
 -DCKO_OSE \
 -DSYSCLK_OSE \
--DOSECLK_VAL="8000000"
+-DOSECLK_VAL="8000000" \
+-DBAREMETAL
 
 # AS includes
 AS_INCLUDES = 
@@ -173,8 +174,15 @@ clean:
 # OpenOCD
 #######################################
 # TODO: Сделать платформонезависимо.
-OPENOCD_PATH = C:/work_old1/niiet_riscv_sdk/xpack-openocd-k1921vk-0.12.0-k1921vk-win32-x64/bin
-OPENOCD = $(OPENOCD_PATH)/openocd.exe
+
+# for windows
+# OPENOCD_PATH = C:/work_old1/niiet_riscv_sdk/xpack-openocd-k1921vk-0.12.0-k1921vk-win32-x64/bin
+# OPENOCD = $(OPENOCD_PATH)/openocd.exe
+
+# for linux
+# OPENOCD = /home/mkaa/vg015/openocd-k1921vk/src/openocd
+OPENOCD = openocd
+
 OCD_F = -f ./dbg/cmsis-dap.cfg -f ./dbg/k1921vk035.cfg
 OCD_PRE = -c init -c "reset halt" -c "flash probe 0"
 OCD_POST = -c "reset run" -c "exit"
