@@ -57,6 +57,10 @@ void adc_log_sigint(void) {
   ucmd_set_sigint(default_sigint);
 }
 
+int ucmd_reset(int argc, char *argv[]) {
+  NVIC_SystemReset();
+  return -1;
+}
 
 // ucmd handler for mem_dump.
 int ucmd_adc(int argc, char *argv[])
@@ -108,6 +112,11 @@ command_t cmd_list[] = {
     .help = "adc log on or ctrl+c",
     .fn   = ucmd_adc,
   },
+  {
+    .cmd  = "reset",
+    .help = "reset",
+    .fn   = ucmd_reset,
+  },
 
   {}, // null list terminator DON'T FORGET THIS!
 };
@@ -152,8 +161,6 @@ uint32_t ch_res[] = { 0x777, 0x777, 0x777, 0x777 };
 
 
 int main() {
-    // TODO: код для PLL не работает, нужно починить.
-    // SystemInit();
     SystemCoreClockUpdate();
     printf_init();
     show_version();

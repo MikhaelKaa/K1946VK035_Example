@@ -80,8 +80,8 @@ AS_DEFS =
 # C defines
 C_DEFS =  \
 -DK1946VK035 \
--DCKO_OSE \
--DSYSCLK_OSE \
+-DCKO_NONE \
+-DSYSCLK_PLL \
 -DOSECLK_VAL="8000000" \
 -DBAREMETAL
 
@@ -195,7 +195,8 @@ erase:
 
 unbrick:
 	echo "Connect SERVEN to VCC, reset controller and press Enter"
-	read
+	@read -p "Press Enter to continue..." dummy
 	$(OPENOCD) $(OCD_F) -c 'init' -c 'reset halt' -c 'mww 0x40040014 0x00000001' -c 'mdw 0x40040014' -c 'reset run' -c 'exit'
 
+	
 # *** EOF ***

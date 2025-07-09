@@ -12,8 +12,8 @@
             ],
             "defines": [
                 "K1946VK035",
-                "CKO_OSE",
-                "SYSCLK_OSE",
+                "CKO_NONE",
+                "SYSCLK_PLL",
                 "OSECLK_VAL=8000000"
             ],
             "cStandard": "c11",
