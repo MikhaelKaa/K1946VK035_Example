@@ -2,6 +2,7 @@
     "configurations": [
         {
             "name": "arm_c_cpp_properties",
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
             "includePath": [
                 "${workspaceRoot}/platform/**",
                 "${workspaceFolder}/app/retarget",
@@ -17,7 +18,7 @@
             ],
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-arm"
+            "intelliSenseMode": "linux-gcc-arm"
         }
     ],
     "version": 4
